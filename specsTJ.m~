@@ -40,7 +40,7 @@ linear_ligand=1;
 exponential_ligand=0;
 % set to 1 for exponential ligand, zero for not
 
-% Sort out the conflict between total_x and channellength
+% Sort out why total_x and 
 total_x=1;
         
 if display_progress==1
