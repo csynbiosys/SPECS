@@ -19,7 +19,7 @@ display_progress=1;    %set to 0 not to printout anything, 1 if want printout
 %  (for exponential gradients) or (linear case) just the initial ligand
 
 % to show histograms make =1, else=0
-showdistributions=0;
+showdistributions=1;
 interval_between_frames=0.001;  % e.g. 0.1, 0.01
 % is above=1 then a "movie" is shown, with that interval between frames
 % seems not to plot intermediates unless I include this?
