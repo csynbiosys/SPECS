@@ -19,7 +19,7 @@ display_progress=1;    %set to 0 not to printout anything, 1 if want printout
 %  (for exponential gradients) or (linear case) just the initial ligand
 
 % to show histograms make =1, else=0
-showdistributions=0;
+showdistributions=1;
 interval_between_frames=0.001;  % e.g. 0.1, 0.01
 % is above=1 then a "movie" is shown, with that interval between frames
 % seems not to plot intermediates unless I include this?
@@ -27,10 +27,10 @@ interval_between_frames=0.001;  % e.g. 0.1, 0.01
 showmeans=1;
 % if==1, end by plotting the history of means, so no need to call plot prog
 
-uniforminitial=1;
+uniforminitial=0;
 % set to 1 for uniform initial distribution, zero for not
 
-middleinitial=0;
+middleinitial=1;
 % set to 1 for delta initial distro, zero for not
 % centered in the middle unless exponential ligand (in which case, computed)
 
@@ -40,7 +40,7 @@ linear_ligand=1;
 exponential_ligand=0;
 % set to 1 for exponential ligand, zero for not
 
-% Sort out why total_x and 
+% Sort out the conflict between total_x and channellength
 total_x=1;
         
 if display_progress==1
@@ -334,7 +334,8 @@ for t = 1 : 1 : number_steps
 %                                (equations 4 and 5 in Jiang et al)
 % note that this is a vector, listing the probability for each cell
 
-    p = (dt / RUN_TIME) .* L./ligandright;%ones(num_cell,1);%(a./A_0).^H;
+  %  p = (dt / RUN_TIME) .* L./ligandright;%ones(num_cell,1);%(a./A_0).^H;
+    p =  1-(sin(2*pi*2.5.*x/1000)+1)/2;
                   %debug :print probabilities
                   %if p >0
                   %   if p < 1

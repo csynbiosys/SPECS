@@ -334,7 +334,8 @@ for t = 1 : 1 : number_steps
 %                                (equations 4 and 5 in Jiang et al)
 % note that this is a vector, listing the probability for each cell
 
-    p = (dt / RUN_TIME) .* L./ligandright;%ones(num_cell,1);%(a./A_0).^H;
+  %  p = (dt / RUN_TIME) .* L./ligandright;%ones(num_cell,1);%(a./A_0).^H;
+    p =  (1-(sin(2*pi*2.5.*x/1000)+1)/2).^2;
                   %debug :print probabilities
                   %if p >0
                   %   if p < 1
