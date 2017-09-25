@@ -4,9 +4,6 @@
 % Test with this command: 
 % specs1D(0,200,150,100,100,0.005,0);
 
-
-%
-
 function specs1Dfm(ligandleft,ligandright,preadaptC,total_t,num_cell,kr,flag)
 third_argument=preadaptC
 display_progress=1;    %set to 0 not to printout anything, 1 if want printout
